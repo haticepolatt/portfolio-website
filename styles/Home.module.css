@@ -1,0 +1,63 @@
+/* Hero Bölümü */
+.hero {
+  position: relative;
+ 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+ 
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Görseli sönükleştiren koyu katman */
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+/* Yazı içeriği */
+.heroContent {
+  position: relative;
+  z-index: 2;
+  color: #ffffff; /* varsayılan yazı rengi */
+}
+
+/* Başlık */
+.herContent h1 {
+  font-size: 3rem;
+  font-weight: normal;
+  color: #ffffff; /* İstersen buradan rengini değiştir */
+}
+
+/* Açıklama */
+.heroContent p {
+  font-size: 1.2rem;
+  color: #e0e0e0;
+  margin-top: 10px;
+}
+
+/* Buton */
+.cta {
+  margin-top: 20px;
+  background-color: #00bcd4;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta:hover {
+  background-color: #0097a7;
+}

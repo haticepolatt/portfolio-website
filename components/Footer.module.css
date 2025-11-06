@@ -1,0 +1,21 @@
+.footer {
+    text-align: center;
+    padding: 0.6rem 0;         /* yükseklik orantısal */
+    margin-top: 0;
+    background: #2e2e2e;
+    color: #ebd9d8;
+    font-family: "Ciguatera", sans-serif;
+    font-size: 1rem;           /* 16px eşdeğer ama orantısal */
+    box-shadow: 0 -0.15rem 0.4rem rgba(0, 0, 0, 0.15);
+    width: 100%;
+  }
+  
+  /* 📱 Mobil uyum (iPhone dahil) */
+  @media (max-width: 48rem) {  /* 768px */
+    .footer {
+      padding: 0.8rem 0;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+  }
+  

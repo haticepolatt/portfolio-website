@@ -1,0 +1,174 @@
+.aboutSkillsSection {
+  background: #EBD9D8;
+  padding: 100px 40px;
+  display: flex;
+  justify-content: center;
+  color: #2e2e2e;
+}
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Sol taraf (fotoğraf + yazı) */
+.leftSide {
+  flex: 1;
+  text-align: center;
+}
+
+.profilePhoto {
+  width: 270px;
+  height: 370px;
+  border-radius: 150px;
+  object-fit: cover;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  border: 6px solid #f7eded;
+  margin-bottom: 25px;
+}
+
+.aboutText {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.aboutText h2 {
+  font-family: "Ciguatera", sans-serif;
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+
+.aboutText p {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.6;
+  font-family: "Inter", sans-serif;
+}
+
+/* Sağ taraf (Yetenek kutuları) */
+.rightSide {
+  flex: 1.2;
+  text-align: left;
+}
+
+.rightSide h2 {
+  font-family: "Ciguatera", sans-serif;
+  font-size: 1.9rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.skillGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 1px; /* Yatay boşluk */
+  row-gap: 25px;   /* Dikey boşluk */
+  justify-items: center; /* Ortalamayı sağlar */
+}
+
+/* Kutular */
+.skillBox {
+  background: #fff;
+  border-radius: 20px;
+  width: 220px;
+  padding: 20px 15px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  margin: 0;
+}
+
+.skillBox:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(116, 109, 247, 0.3);
+}
+
+.icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.skillBox h4 {
+  font-family: "Ciguatera", sans-serif;
+  font-size: 1.2rem;
+  color: #2e2e2e;
+  margin-bottom: 10px;
+}
+
+/* Kutular içindeki liste */
+.skillBox ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-size: small;
+}
+
+.skillBox li {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 5px 0;
+}
+
+/* Hover sırasında yazılar parlasın */
+.skillBox:hover h4,
+.skillBox:hover li {
+  color: #746df7;
+}
+
+/* 📱 iPhone (küçük ekran) düzeni */
+@media (max-width: 768px) {
+  .aboutSkillsSection {
+    padding: 70px 20px; /* daha az kenar boşluğu, px sabit */
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .leftSide,
+  .rightSide {
+    flex: none;
+    width: 100%;
+    text-align: center;
+  }
+
+  .rightSide h2 {
+    margin-top: 20px;
+  }
+
+  .skillGrid {
+    grid-template-columns: 1fr; /* 2 yerine 1 sütun, ama aynı px değerleri */
+    row-gap: 25px;
+  }
+
+  .skillBox {
+    width: 260px; /* biraz geniş, ama px oranı korundu */
+  }
+
+  .profilePhoto {
+    width: 240px;
+    height: 330px;
+    border-radius: 130px;
+  }
+
+  .aboutText {
+    max-width: 320px;
+  }
+
+  .aboutText h2 {
+    font-size: 1.9rem;
+  }
+
+  .aboutText p {
+    font-size: 1rem;
+  }
+}

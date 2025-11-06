@@ -1,0 +1,158 @@
+/* ÜST NAV */
+.nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    /* Başlangıç (orta büyüklük) */
+    padding: 1rem 3vw;
+    background: #2E2E2E;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    backdrop-filter: blur(6px);
+  
+    transition: padding .25s ease, background .25s ease, box-shadow .25s ease;
+  }
+  
+  /* Scroll sonrası küçülmüş görünüm */
+  .navScrolled {
+    padding: 0.4rem 2vw; /* daha küçük */
+    background: rgba(46,46,46,0.95);
+    box-shadow: 0 1px 5px rgba(0,0,0,0.15);
+  }
+  
+  /* Marka */
+  .brand {
+    font-size: clamp(1.2rem, 2vw, 1.2rem);           /* başlangıç boyutu */
+    font-weight: 900;
+    color: #EBD9D8;
+    font-family: "Ciguatera", serif;
+    transition: font-size .25s ease;
+  }
+  .navScrolled .brand {
+    font-size: clamp(0.95rem, 1.8vw, 1.1rem);           /* küçülmüş boyut */
+  }
+
+  /* Link grubu */
+  .links {
+    display: flex;
+    align-items: center;
+    gap: 2vw;                    /* linkler arası boşluk */
+    flex-wrap: wrap;
+  }
+  
+  /* Tekil link */
+  .link {
+    color: #EBD9D8;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    font-size: clamp(0.85rem, 1.6vw, 1rem);
+    transition: color .2s ease, font-size .25s ease;
+    font-family: "Inter", sans-serif; 
+  }
+  .navScrolled .link {
+    font-size: clamp(00.85rem, 1.4vw, 0.95rem);        /* scroll’da minik küçültme */
+  }
+  
+  /* Hover alt çizgi animasyonu */
+  .link::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: -0.4px;
+    width: 0%;
+    height: 2px;
+    background: #746df7;
+    transition: width 0.25s ease;
+  }
+  .link:hover {
+    color:#746df7;
+  }
+  .link:hover::after {
+    width: 100%;
+  }
+  
+  /* Alt ince çizgi*/
+  .nav::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 1px;
+    background: rgba(255,255,255,0.06);
+  }
+ /* === MOBİL (Hamburger Menü) === */
+@media (max-width: 768px) {
+  .hamburger {
+    position: relative;
+    display: block;
+    color: #EBD9D8;
+    font-size: 1.6rem;
+    cursor: pointer;
+    z-index: 9999;
+  }
+
+  .links {
+    position: fixed;
+    top: 60%;
+    right: 0;
+    width: 100%;
+    z-index: 500;
+    background: #2E2E2E;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    transform: translateY(-200%);
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .showMenu {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .link {
+    font-size: 1.1rem;
+  }
+
+  .links a:hover {
+    color: #746df7;
+  }
+}
+/* CV linki için ek stil */
+.cvLink {
+  border: 1px solid #EBD9D8;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.cvLink:hover {
+  background: #EBD9D8;
+  color: #2E2E2E;
+}
+
+/* Navbar'daki favicon (logo simgesi) */
+/* Navbar'daki favicon (logo simgesi) */
+.logoIcon {
+  width: clamp(1.8rem, 2vw, 1.5rem);   /* Ekran boyutuna göre 16–24px arası */
+  height: clamp(1.8rem, 2vw, 1.5rem);
+  margin-right: 0.3rem;              /* ~8px */
+  margin-left: 0.4rem;
+  vertical-align: middle;
+  border-radius: 0.25rem;            /* ~4px */
+}
+
+
+/* Masaüstünde hamburger gizli */
+@media (min-width: 769px) {
+  .hamburger {
+    display: none;
+  }
+}
